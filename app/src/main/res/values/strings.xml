@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OldDancer</string>
+    <string name="home">主页</string>
+    <string name="interact">互动</string>
+    <string name="mine">我的</string>
+    <string name="knowledge">养生</string>
+    <string name="exercise">锻炼</string>
+</resources>
