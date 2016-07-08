@@ -7,28 +7,42 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2016/7/8.
  */
 public class UserFragment extends Fragment {
 
-    private ListView listview1;
-    private ListView listview2;
-    private int[] image1={R.drawable.list,R.drawable.invite,R.drawable.grade};
-    private int[] image2={R.drawable.download,R.drawable.history,R.drawable.suggest,R.drawable.setting};
-    private String[] theme1={"我的舞单","邀请好友","积分等级"};
-    private String[] theme2={"我的下载","观看记录","投诉建议","设置"};
-    private int[] image3={R.drawable.larger,R.drawable.larger,R.drawable.larger};
-    private int[] image4={R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger};
+    private ListView listview;
+    private SimpleAdapter simpleAdapter;
+    private List<Map<String,Object>>dataList;
+    private int[] image={R.drawable.list,R.drawable.invite,R.drawable.grade,R.drawable.download,R.drawable.history,R.drawable.suggest,R.drawable.setting};
+    private String[] theme={"我的舞单","邀请好友","积分等级","我的下载","观看记录","投诉建议","设置"};
+    //private int[] image2={R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.user_layout,container,false);
-        ListView listView1=(ListView)view.findViewById(R.id.listView1);
-        ListView listView2=(ListView)view.findViewById(R.id.listView2);
-        TextView textView=(TextView)view.findViewById(R.id.textView1);
+        ListView listView=(ListView)view.findViewById(R.id.listView);
+        TextView textView=(TextView)view.findViewById(R.id.textView);
+        List<Map<String,Object>> listitem=new ArrayList<Map<String,Object>>();
+        for(int i=0;i<image.length;i++){
+            Map<String,Object> showitem=new HashMap<String,Object>();
+            showitem.put("image",image[i]);
+            showitem.put("theme",theme[i]);
+            showitem.put("image2",R.drawable.larger);
+            listitem.add(showitem);
+        }
+        SimpleAdapter simpleAdapter=new SimpleAdapter(this.getActivity(),listitem,R.layout.list_item_layout,new String[]{"image","theme","image2"},new int[]{R.id.image,R.id.theme,R.drawable.larger});
+        listView.setAdapter(simpleAdapter);
         return view;
     }
+
 }
