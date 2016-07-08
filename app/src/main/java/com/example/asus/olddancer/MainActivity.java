@@ -14,7 +14,7 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-
+//changed
 public class MainActivity extends Activity implements View.OnClickListener {
     //UI Object
     private  TextView txt_top_bar;
