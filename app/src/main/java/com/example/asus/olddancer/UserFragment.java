@@ -21,6 +21,7 @@ public class UserFragment extends Fragment {
     private String[] theme1={"我的舞单","邀请好友","积分等级"};
     private String[] theme2={"我的下载","观看记录","投诉建议","设置"};
     private int[] image3={R.drawable.larger,R.drawable.larger,R.drawable.larger};
+    private int[] image4={R.drawable.larger,R.drawable.larger,R.drawable.larger,R.drawable.larger};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
