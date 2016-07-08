@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:clipToPadding="false"
+    android:clickable="false"
+    android:focusable="false"
+    android:layout_marginTop="2dp"
+    android:focusableInTouchMode="false">
+
+     <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+         android:id="@+id/card"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:cardBackgroundColor="@android:color/white"
+         app:cardCornerRadius="5dp">
+
+          <RelativeLayout
+              android:background="#fff"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+               <TextView
+                   android:text="食"
+                   android:id="@+id/title"
+                   android:layout_width="85dp"
+                   android:layout_height="match_parent"
+                   android:layout_above="@+id/description"
+                   android:layout_alignParentEnd="false"
+                   android:layout_alignParentRight="true"
+                   android:gravity="center_vertical|center_horizontal"
+                   android:textColor="#000000"
+                   android:textSize="45sp" />
+
+               <ImageView
+                   android:id="@+id/pic_food"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_above="@+id/description"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentStart="true"
+                   android:layout_alignParentTop="true"
+                   android:layout_toLeftOf="@+id/title"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/pic_demo_food" />
+
+
+               <TextView
+                   android:id="@+id/description"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentBottom="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginBottom="5dp"
+                   android:layout_marginTop="10dp"
+                   android:gravity="center_horizontal"
+                   android:text="夏季潮湿，应该多食用除去湿气食物。"
+                   android:textColor="#000000"
+                   android:textSize="20sp" />
+<View
+    android:background="#B5B5B5"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"></View>
+          </RelativeLayout>
+     </android.support.v7.widget.CardView>
+</FrameLayout>

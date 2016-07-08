@@ -7,8 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-
-
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,7 +23,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView txt_mine;
     private FrameLayout ly_content;
     Fragment object;
-    MyFragment fg1,fg2,fg3;
+    MyFragment fg1,fg3;
+    knowledge fg2;
     private android.app.FragmentManager fManager;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -41,7 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private  void bindViews() {
         txt_top_bar = (TextView) findViewById(R.id.txt_topbar);
         txt_home = (TextView) findViewById(R.id.txt_home);
-        txt_interact = (TextView) findViewById(R.id.txt_interaction);
+        txt_interact = (TextView) findViewById(R.id.txt_knowledge);
         txt_mine = (TextView) findViewById(R.id.txt_mine);
         ly_content = (FrameLayout) findViewById(R.id.ly_content);
 
@@ -85,11 +84,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     fragmentTransaction.show(fg1);
                 }break;
 
-            case R.id.txt_interaction:
+            case R.id.txt_knowledge:
                 setSelected();
                 txt_interact.setSelected(true);
                 if (fg2==null) {
-                    fg2 = new MyFragment("养生知识");
+                    fg2 = new knowledge();
                     fragmentTransaction.add(R.id.ly_content, fg2);
                 }else {
                     fragmentTransaction.show(fg2);

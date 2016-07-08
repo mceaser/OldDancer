@@ -24,8 +24,7 @@ import android.widget.TextView;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_content,container,false);
-        TextView txt_content = (TextView)
-        view.findViewById(R.id.txt_content);
+        TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
         txt_content.setText(content);
         return view;
     }
