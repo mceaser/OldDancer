@@ -6,11 +6,7 @@ import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -23,8 +19,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView txt_mine;
     private FrameLayout ly_content;
     Fragment object;
-    MyFragment fg1,fg3;
+    MyFragment fg1;
     knowledge fg2;
+    UserFragment fg3;
     private android.app.FragmentManager fManager;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -98,7 +95,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 setSelected();
                 txt_mine.setSelected(true);
                 if (fg3==null) {
-                    fg3 = new MyFragment("用户");
+                    fg3 = new UserFragment();
                     fragmentTransaction.add(R.id.ly_content, fg3);
                 }else {
                     fragmentTransaction.show(fg3);
