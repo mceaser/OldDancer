@@ -17,6 +17,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MySongListActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".InviteFriendActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".IntegralGradeActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".MyDownloadActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".WatchRecordActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".ComplaintSuggestActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
     </application>
 
 </manifest>
