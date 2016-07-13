@@ -22,14 +22,14 @@ import java.util.HashMap;
 public class Setting_safe_Activity extends Activity{
 
     private ListView listView;
-    private String[] string={"手机号","修改密码"};
+    private String[] text_title={"手机号","修改密码"};
     ArrayList<HashMap<String,Object>> listitem;
 
     private ArrayList<HashMap<String,Object>> getData(){
         listitem=new ArrayList<HashMap<String,Object>>();
-        for(int i=0;i<string.length;i++){
+        for(int i=0;i<text_title.length;i++){
             HashMap<String,Object> map=new HashMap<String,Object>();
-            map.put("string",string[i]);
+            map.put("string",text_title[i]);
             map.put("image",R.drawable.larger);
             listitem.add(map);
         }
@@ -89,26 +89,26 @@ public class Setting_safe_Activity extends Activity{
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup viewGroup) {
+        public View getView(final int position, View convertView, ViewGroup viewGroup) {
             ViewHolder holder;
             if(convertView==null){
                 convertView=mInflater.inflate(R.layout.list_item_setting_safe_listview,null);
                 holder=new ViewHolder();
-                holder.title=(TextView)convertView.findViewById(R.id.title);
-                holder.image=(ImageView)convertView.findViewById(R.id.image);
+                holder.text_title=(TextView)convertView.findViewById(R.id.text_title);
+                holder.image_view=(ImageView)convertView.findViewById(R.id.image);
                 convertView.setTag(holder);
             }else {
                 holder=(ViewHolder)convertView.getTag();
             }
-            holder.title.setText(getData().get(position).get("title").toString());
-            holder.image.setBackgroundResource((Integer)listitem.get(position).get("image"));
+            holder.text_title.setText(listitem.get(position).get("title1").toString());
+            holder.image_view.setBackgroundResource((Integer)listitem.get(position).get("image"));
 
             return convertView;
         }
     }
 
-    public class ViewHolder{
-        public TextView title;
-        public ImageView image;
+    public final class ViewHolder{
+        public TextView text_title;
+        public ImageView image_view;
     }
 }
