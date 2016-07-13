@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import java.util.HashMap;
  */
 public class Setting_safe_Activity extends Activity{
 
+    private Button button;
     private ListView listView;
     private String[] text_title={"手机号","修改密码"};
     ArrayList<HashMap<String,Object>> listitem;
@@ -29,8 +31,8 @@ public class Setting_safe_Activity extends Activity{
         listitem=new ArrayList<HashMap<String,Object>>();
         for(int i=0;i<text_title.length;i++){
             HashMap<String,Object> map=new HashMap<String,Object>();
-            map.put("string",text_title[i]);
-            map.put("image",R.drawable.larger);
+            map.put("text_title",text_title[i]);
+            map.put("image_view",R.drawable.larger);
             listitem.add(map);
         }
         return listitem;
@@ -39,6 +41,17 @@ public class Setting_safe_Activity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_setting_safe);
+
+        button=(Button)findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Setting_safe_Activity.this,SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         listView=(ListView) findViewById(R.id.list_password);
 
@@ -89,20 +102,26 @@ public class Setting_safe_Activity extends Activity{
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup viewGroup) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
             if(convertView==null){
                 convertView=mInflater.inflate(R.layout.list_item_setting_safe_listview,null);
                 holder=new ViewHolder();
                 holder.text_title=(TextView)convertView.findViewById(R.id.text_title);
-                holder.image_view=(ImageView)convertView.findViewById(R.id.image);
+                holder.image_view=(ImageView)convertView.findViewById(R.id.image_view);
                 convertView.setTag(holder);
             }else {
                 holder=(ViewHolder)convertView.getTag();
             }
-            holder.text_title.setText(listitem.get(position).get("title1").toString());
-            holder.image_view.setBackgroundResource((Integer)listitem.get(position).get("image"));
-
+            holder.text_title.setText(getData().get(position).get("text_title").toString());
+            holder.image_view.setBackgroundResource((Integer)listitem.get(position).get("image_view"));
+//            if(position==0) {
+//                holder.text_title.setText("手机号");
+//                holder.image_view.setImageResource(R.drawable.larger);
+//            }else {
+//                holder.text_title.setText("修改密码");
+//                holder.image_view.setImageResource(R.drawable.larger);
+//            }
             return convertView;
         }
     }
