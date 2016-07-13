@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,60 +17,36 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Administrator on 2016/7/9.
+ * Created by Administrator on 2016/7/12.
  */
-public class SettingActivity extends Activity{
+public class Setting_safe_Activity extends Activity{
 
-    private Button button1;
-    private Button button2;
     private ListView listView;
-    //定义一个动态数组
-    ArrayList<HashMap<String, Object>> listitem;
-    public String[] string={"关于","账号与安全"};
+    private String[] string={"手机号","修改密码"};
+    ArrayList<HashMap<String,Object>> listitem;
 
     private ArrayList<HashMap<String,Object>> getData(){
         listitem=new ArrayList<HashMap<String,Object>>();
-        for(int i=0;i<string.length;i++) {
-            HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put("title",string[i]);
+        for(int i=0;i<string.length;i++){
+            HashMap<String,Object> map=new HashMap<String,Object>();
+            map.put("string",string[i]);
             map.put("image",R.drawable.larger);
             listitem.add(map);
         }
-
         return listitem;
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_item_setting);
+        setContentView(R.layout.list_item_setting_safe);
 
-        button1 = (Button) findViewById(R.id.button);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
-        button2=(Button)findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(SettingActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        listView = (ListView) findViewById(R.id.list_setting);
+        listView=(ListView) findViewById(R.id.list_password);
 
         listitem=getData();
 
-        //得到MyAdapter对象
-        MyAdapter adapter = new MyAdapter(this);
-        //为ListView绑定Adapter*/
+        MyAdapter adapter=new MyAdapter(this);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -79,20 +54,20 @@ public class SettingActivity extends Activity{
                 Intent intent;
                 switch (position){
                     case 0:
-                        intent=new Intent(SettingActivity.this,Setting_about_Activity.class);
+                        intent=new Intent(Setting_safe_Activity.this,Setting_safe_phone_Activity.class);
                         startActivity(intent);
                         break;
                     case 1:
-                        intent=new Intent(SettingActivity.this,Setting_safe_Activity.class);
+                        intent=new Intent(Setting_safe_Activity.this,Setting_safe_password_Activity.class);
                         startActivity(intent);
                         break;
                 }
             }
         });
+
     }
 
-
-     private class MyAdapter extends BaseAdapter {
+    private class MyAdapter extends BaseAdapter{
 
         private LayoutInflater mInflater;
         public MyAdapter(Context context){
@@ -114,18 +89,15 @@ public class SettingActivity extends Activity{
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup viewGroup) {
             ViewHolder holder;
             if(convertView==null){
-                convertView=mInflater.inflate(R.layout.list_item_setting_listview,null);
+                convertView=mInflater.inflate(R.layout.list_item_setting_safe_listview,null);
                 holder=new ViewHolder();
                 holder.title=(TextView)convertView.findViewById(R.id.title);
                 holder.image=(ImageView)convertView.findViewById(R.id.image);
-                //holder.button=(Button)convertView.findViewById(R.id.button);
-                //绑定ViewHolder对象
                 convertView.setTag(holder);
-            }else{
-                //取出ViewHolder对象
+            }else {
                 holder=(ViewHolder)convertView.getTag();
             }
             holder.title.setText(getData().get(position).get("title").toString());
@@ -135,9 +107,8 @@ public class SettingActivity extends Activity{
         }
     }
 
-    public final class ViewHolder{
+    public class ViewHolder{
         public TextView title;
         public ImageView image;
-        //public Button button;
     }
 }

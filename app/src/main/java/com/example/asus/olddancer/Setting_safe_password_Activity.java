@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by Administrator on 2016/7/9.
+ * Created by Administrator on 2016/7/13.
  */
-public class MySongListActivity extends Activity {
-
+public class Setting_safe_password_Activity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_item_songlist);
+        setContentView(R.layout.list_item_setting_safe_password);
     }
 }

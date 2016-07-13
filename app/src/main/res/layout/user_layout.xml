@@ -14,14 +14,14 @@
             android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:id="@+id/imageView1"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="12dp"
             android:background="@drawable/user_login"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:id="@+id/textView"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="90dp"
             android:text="未登录"
             android:textSize="20sp"/>
 

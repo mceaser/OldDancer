@@ -53,6 +53,30 @@
             android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
 
+        <activity
+            android:name=".Setting_about_Activity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".Setting_safe_Activity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".Setting_safe_phone_Activity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name=".Setting_safe_password_Activity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

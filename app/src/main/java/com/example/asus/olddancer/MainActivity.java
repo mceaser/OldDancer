@@ -32,7 +32,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fManager =getFragmentManager();
         bindViews();
         txt_home.performClick();//模拟一次点击
+
+        //int id=getIntent().getIntegerExtra("user",2);
     }
+
+//    protected void onResume(){
+//        int id=getIntent().getIntExtra("user",2);
+//        if(id==2){
+//            fg3.setvisible(true);
+//        }
+//        super.onResume();
+//    }
 
     private  void bindViews() {
         txt_top_bar = (TextView) findViewById(R.id.txt_topbar);
