@@ -44,7 +44,7 @@
 
     <EditText
         android:id="@+id/editText_suggest"
-        android:layout_width="360dp"
+        android:layout_width="330dp"
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:gravity="top"
@@ -53,6 +53,10 @@
         android:textColorHint="#e9e8e8"
         android:textCursorDrawable="@drawable/color_cursor"
         android:textSize="16sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
     <RelativeLayout
         android:layout_width="340dp"
@@ -74,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="反馈电话:"
+            android:textColor="#807e7e"
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"/>
 
@@ -82,7 +87,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="400-888-888"
-            android:textColor="#7489af" />
+            android:textColor="#7489af"
+            android:layout_toLeftOf="@id/advise"/>
 
     </RelativeLayout>
 

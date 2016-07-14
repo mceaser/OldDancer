@@ -27,4 +27,38 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/image_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/mobilephone"/>
+
+        <TextView
+            android:id="@+id/user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="100dp"
+            android:text="你的手机号："
+            android:textSize="14sp"
+            android:layout_below="@+id/image_mobile"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_change"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:text="更换手机号码"
+        android:textSize="18sp"
+        android:background="#e64848"/>
+
 </LinearLayout>
