@@ -13,7 +13,7 @@
         <Button
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:id="@+id/button"
+            android:id="@+id/button_grade"
             android:layout_marginLeft="15dp"
             android:background="@drawable/smaller1"
             android:layout_centerVertical="true"/>

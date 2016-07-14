@@ -47,7 +47,7 @@ public class SettingActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_setting);
 
-        button1 = (Button) findViewById(R.id.button);
+        button1 = (Button) findViewById(R.id.button_setting);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

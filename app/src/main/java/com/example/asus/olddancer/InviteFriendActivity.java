@@ -16,7 +16,7 @@ public class InviteFriendActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_invitefriend);
 
-        button=(Button) findViewById(R.id.button);
+        button=(Button) findViewById(R.id.button_friend);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

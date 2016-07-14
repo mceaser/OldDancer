@@ -78,14 +78,12 @@
             android:layout_marginLeft="70dp"/>
 
         <Button
-            android:id="@+id/yes"
+            android:id="@+id/button_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="400-888-888"
-            android:textColor="#7489af"
-            android:layout_toLeftOf="@+id/advise" />
+            android:textColor="#7489af" />
 
     </RelativeLayout>
-
 
 </LinearLayout>

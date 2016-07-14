@@ -16,7 +16,7 @@ public class WatchRecordActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_watchrecord);
 
-        button=(Button) findViewById(R.id.button);
+        button=(Button) findViewById(R.id.button_record);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
