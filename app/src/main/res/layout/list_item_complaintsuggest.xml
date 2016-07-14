@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +25,67 @@
             android:text="投诉建议"
             android:textColor="#ecf0f1"
             android:textSize="20sp"/>
+        <Button
+            android:id="@+id/button_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="提交"
+            android:textSize="14sp"
+            android:textColor="#ecf0f1"
+            android:layout_marginLeft="300dp"
+            android:background="#00000000"/>
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <EditText
+        android:id="@+id/editText_suggest"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:hint="请在这里输入..."
+        android:textColorHint="#e9e8e8"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/shape"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/phone"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/advise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="反馈电话:"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp"/>
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="400-888-888"
+            android:textColor="#7489af"
+            android:layout_toLeftOf="@+id/advise" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

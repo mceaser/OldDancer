@@ -1,7 +1,6 @@
 package com.example.asus.olddancer;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,8 +20,7 @@ public class WatchRecordActivity extends Activity{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(WatchRecordActivity.this,MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

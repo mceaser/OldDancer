@@ -46,8 +46,9 @@ public class Setting_safe_Activity extends Activity{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Setting_safe_Activity.this,SettingActivity.class);
-                startActivity(intent);
+//                Intent intent=new Intent(Setting_safe_Activity.this,SettingActivity.class);
+//                startActivity(intent);
+                finish();
             }
         });
 
