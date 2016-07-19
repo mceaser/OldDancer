@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/LinearLayout"
+        android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal">
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:id="@+id/View"
-        android:layout_below="@+id/LinearLayout"
+        android:layout_below="@+id/RelativeLayout"
         android:background="#d4d4d4"/>
 
     <ListView

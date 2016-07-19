@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ import java.util.Map;
  */
 public class UserFragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener{
 
+    private RelativeLayout relativeLayout;
     private ListView listView;
     private TextView textView;
     private SimpleAdapter simpleAdapter;
@@ -36,6 +38,15 @@ public class UserFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.user_layout, container, false);
+
+        View relativeLayout=view.findViewById(R.id.RelativeLayout);
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(),LogInActivity.class);
+                startActivity(intent);
+            }
+        });
         listView = (ListView) view.findViewById(R.id.listView);
         textView = (TextView) view.findViewById(R.id.textView);
         SimpleAdapter simpleAdapter = new SimpleAdapter(this.getActivity(), getData(), R.layout.list_item_layout, new String[]{"image", "theme", "image2"}, new int[]{R.id.image, R.id.theme, R.drawable.larger});
