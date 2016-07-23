@@ -37,7 +37,7 @@ public class UserFragment extends Fragment implements AdapterView.OnItemClickLis
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.user_layout, container, false);
+        View view = inflater.inflate(R.layout.userfragment_layout, container, false);
 
         View relativeLayout=view.findViewById(R.id.RelativeLayout);
         relativeLayout.setOnClickListener(new View.OnClickListener() {

@@ -12,14 +12,14 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/square_dancing"/>
     <RelativeLayout
-        android:id="@+id/login_relativeLayout1"
+        android:id="@+id/register_relativeLayout1"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/square_dancing">
         <ImageView
-            android:id="@+id/login_username"
+            android:id="@+id/register_username"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -38,14 +38,14 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/login_relativeLayout2"
+        android:id="@+id/register_relativeLayout2"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/login_relativeLayout1">
+        android:layout_below="@+id/register_relativeLayout1">
         <ImageView
-            android:id="@+id/login_password"
+            android:id="@+id/register_password"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -64,41 +64,15 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/preservation_button"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:text="登 录"
+        android:text="保 存"
         android:textColor="#c1c0c0"
         android:textSize="18sp"
-        android:layout_below="@+id/login_relativeLayout2"
+        android:layout_below="@+id/register_relativeLayout2"
         android:background="@drawable/edittext_color"/>
-    <RelativeLayout
-        android:id="@+id/login_relativeLayout3"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/login_button">
-        <Button
-            android:id="@+id/register_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="注册账号"
-            android:textColor="#c1c0c0"
-            android:background="#00000000"/>
-        <Button
-            android:id="@+id/forgetpassword_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="忘记密码"
-            android:textColor="#c1c0c0"
-            android:background="#00000000"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>
